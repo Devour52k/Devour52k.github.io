@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML, CSS and JavaScript demo</title>
+<style>
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+ /* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+</style>
+</head>
+<body>
+<!-- Start your code here -->
+<div>
+ <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Iphone</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">
+      <sup>Model:</sup>&nbsp<br/>
+        <strong>4/4S</strong> <br/>
+      <sub>Issue</sub>&nbsp<br />
+        <em>Broken Screen</em><br/>
+      <u style="color: red;"><center>$49.99</center></u>
+    </a>
+    <a href="#">
+      <sup>Model:</sup><br/>
+        <strong><center>4/4S</center></strong> <br/>
+      <sub>Issue:</sub><br />
+        <em><center>Back Glass</center></em> <br/>
+      <sup>Cost:</sup>
+        <u style="color: red;"><center>$19.99</center></u>
+    </a>
+    <a href="#">
+      <sup>Model:</sup><br/>
+      <strong><center>4/4S</center></strong>
+      <sub>Issue:</sub><br />
+      <em><center>Small Parts</center></em> <br/>
+      <sup>Cost:</sup>
+        <u style="color: red;"><center>$49.99</center></u>
+    </a>
+  </div>
+</div>
+
+<script>/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}</script>
+
+<script>// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};</script>
+</div>
+<!-- End your code here -->
+</body>
+</html>
